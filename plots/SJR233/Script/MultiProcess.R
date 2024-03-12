@@ -191,7 +191,7 @@ p4 <- ggplot(data = df_spots, aes(x = cond, y = Surf..unit./2, fill = cond)) +
   stat_dotsinterval(side = "bottom", scale = 0.5, slab_linewidth = NA) +
   scale_fill_manual(values = rep("#00a651",2)) +
   scale_y_log10() +
-  labs(x = "", y = expression(paste("Contact area (", mu, "m"^"2", ")"))) +
+  labs(x = "", y = expression(paste("Cluster area (", mu, "m"^"2", ")"))) +
   theme_cowplot(8) +
   theme(legend.position = "none") 
 
@@ -255,7 +255,7 @@ p8 <- ggplot(data = summary_df, aes(x = cond, y = medianArea)) +
                 aes(y = mean, ymin = mean, ymax = mean),
                 colour = "black",linewidth = 0.4, width = 1) +   #errorbar
   scale_y_continuous(limits = c(0,NA)) +
-  labs(x = "", y = expression(paste("Median contact area (", mu, "m"^"2", ")"))) +
+  labs(x = "", y = expression(paste("Median cluster area (", mu, "m"^"2", ")"))) +
   theme_cowplot(8) +
   theme(legend.position = "none")
 
