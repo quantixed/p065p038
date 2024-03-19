@@ -424,7 +424,7 @@ p1 <- ggplot(tmDF, aes(x = t, y = mean_intensity)) +
   geom_line(aes(group = trace), colour = "#00a651", linewidth = 0.25, alpha = 0.5) +
   geom_line(data = avgDF, mapping=aes(x = t, y = avg), colour = "#006733", alpha = 1, linewidth = 0.5) +
   geom_line(data = spotIntensityDF_summary, mapping=aes(x = t, y = avg), colour = "black", linetype = "dotted", linewidth = 0.5) +
-  lims(y = c(0,NA), x = c(0,200)) +
+  lims(y = c(0,220), x = c(0,200)) +
   labs(x = "Time (s)", y = "Cluster intensity (AU)") +
   theme_cowplot(8) +
   theme(legend.position = "none")
@@ -446,7 +446,7 @@ p3 <- ggplot(avgDF, aes(x = t, y = n)) +
   theme_cowplot(8) +
   theme(legend.position = "none")
 
-r1 <- p1 | p2 | p3
+r1 <- p3 | p2 | p1
 
 ggsave("Output/Plots/figure_plot.pdf",
        r1, width = 170, height = 40, units = "mm", bg = "white")
