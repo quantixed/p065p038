@@ -68,5 +68,5 @@ p2 <- ggplot(data = df,
   theme(legend.position = "none")
 q1 <- p1 + p2 + theme(legend.position = "right", legend.title = element_blank())
 q1 + plot_layout(guides = "collect")
-ggsave("Output/Plots/coloc.pdf", q1, width = 98, height = 78, units = "mm")
+ggsave("Output/Plots/coloc.pdf", q1, width = 98, height = 60, units = "mm")
 

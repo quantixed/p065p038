@@ -116,13 +116,14 @@ p2 <- ggplot(data = df,
                  color = factor(rep)),
              size = 1, alpha = 0.5, shape = 16) +
   scale_colour_manual(values = c("#4477aa","#228833","#ccbb44","#ee6677")) +
+  lims(y = c(0,900)) +
   facet_grid(cell_channel ~ cond + cell_type, labeller = facet_names) +
   labs(x = "", y = "Total clusters") +
   theme_bw(9) +
   theme(legend.position = "none")
 
 ggsave("Output/Plots/comparison2.png", p2, width = 200, height = 120, dpi = 300, units = "mm")
-ggsave("Output/Plots/comparison2.pdf", p2, width = 90, height = 80, units = "mm") 
+ggsave("Output/Plots/comparison2.pdf", p2, width = 90, height = 70, units = "mm")
 
 
 # statistical test ----
