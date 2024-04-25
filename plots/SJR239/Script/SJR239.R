@@ -117,7 +117,7 @@ p2 <- ggplot(data = df,
              size = 1, alpha = 0.5, shape = 16) +
   scale_colour_manual(values = c("#4477aa","#228833","#ccbb44","#ee6677")) +
   lims(y = c(0,900)) +
-  facet_grid(cell_channel ~ cond + cell_type, labeller = facet_names) +
+  facet_grid(cell_channel ~ factor(cond, levels = c("LBRFKBPGFPStarFRB","LBRFKBPGFP6DG5MAPStarFRB")) + cell_type, labeller = facet_names) +
   labs(x = "", y = "Total clusters") +
   theme_bw(9) +
   theme(legend.position = "none")
