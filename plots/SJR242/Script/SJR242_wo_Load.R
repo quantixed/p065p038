@@ -231,13 +231,13 @@ cell_summary_overlay <- cell_summary %>%
 # ggplot showing the mean_sa with cell_label  this is showing the average contact size per cell (not total per mito per cell)
 dodge <- position_dodge(width = 8)
 p9 <- ggplot(cell_summary, aes(x = cond, y = mean_sa / 1e6, group = cell_label, colour = cell_label, shape = cell_label)) + 
-  geom_quasirandom(dodge.width = 8) +
+  geom_quasirandom(dodge.width = 8, size = 1) +
   scale_colour_manual(values = c("#7f7f7f","#f59331")) +
   scale_shape_manual(values = c(1, 16)) +
   geom_errorbar(data = cell_summary_overlay, aes(y = mean_ol / 1e6, ymin = (mean_ol - sd_ol) / 1e6, ymax = (mean_ol + sd_ol) / 1e6), colour = "black", linewidth = 0.2, width = 0, position = dodge) +
-  geom_crossbar(data = cell_summary_overlay, aes(y = mean_ol / 1e6, ymin = mean_ol / 1e6, ymax = mean_ol / 1e6), colour = "black", linewidth = 0.4, width = 8, position = dodge) +
+  geom_crossbar(data = cell_summary_overlay, aes(y = mean_ol / 1e6, ymin = mean_ol / 1e6, ymax = mean_ol / 1e6), colour = "black", linewidth = 0.4, width = 6, position = dodge) +
   scale_y_continuous(limits = c(0, 0.035)) +
-  labs(x = "Mitochondria-ER distance (nm)", y = expression(paste("Contact surface area (",mu,"m"^"2", ")"))) +
+  labs(x = "Mitochondria-ER distance (nm)", y = expression(paste("Contact s.a. (",mu,"m"^"2", ")"))) +
   theme_cowplot(9) +
   theme(legend.position = c(0.01, 0.9), legend.title = element_blank(), legend.text = element_text(size = 9))
 ggsave("Output/Plots/contacts_sa_cell_distance.png", p9, width = 8, height = 6, dpi = 300, bg = "white")
@@ -258,5 +258,13 @@ ggsave("Output/Plots/contacts_vs_mito_sa.png", p6, width = 8, height = 6, dpi = 
 
 # for the figure
 ggsave("Output/Plots/contacts_vs_mito_sa.pdf", p6, width = 8, height = 4.2, dpi = 300, bg = "white")
-ggsave("Output/Plots/contacts_sa_cell_distance.pdf", p9, width = 61, height = 47, units = "mm",bg = "white")
+ggsave("Output/Plots/contacts_sa_cell_distance.pdf", p9, width = 69, height = 47, units = "mm", bg = "white")
 
+## stats on mean contact s.a.
+for(i in unique(cell_summary$cond)){
+  temp <- cell_summary[cell_summary$cond == i, c("cell_label", "mean_sa")]
+  outcome <- temp$mean_sa
+  treatment <- temp$cell_label
+  test1 <- t.test(outcome~treatment)
+  print(paste("cond:", i, "p-value:", test1$p.value))
+}
