@@ -6,6 +6,8 @@ Code and data for Downie et al. manuscript `#p065p038`
 
 Laura Downie, Nuria Ferrandiz, Megan Jones & Stephen J. Royle
 
+*bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https://doi.org/10.1101/2024.05.31.596797)
+
 --
 
 # R Code and data for recreation of plots
