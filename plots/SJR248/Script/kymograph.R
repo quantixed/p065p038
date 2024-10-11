@@ -31,7 +31,7 @@ for (i in seq_len(NROW(selected_rois))) {
                 nrow = nrow(df_cell), ncol = 3)
   rgb_matrix <- matrix(c(df_cell$ch1,
                          df_cell$ch2,
-                         rep(0, nrow(df_cell))),
+                         df_cell$ch1, # rep(0, nrow(df_cell))),
                        nrow = nrow(df_cell), ncol = 3)
   # rgb_matrix is a matrix of integers, we need to convert it to a 3D array
   # so that we can use it to create an image
