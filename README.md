@@ -19,6 +19,7 @@ Laura Downie, Nuria Ferrandiz, Megan Jones & Stephen J. Royle
 - MAPPER + LBR cluster analysis - `SJR239`
 - Mitochondria-ER contact analysis from SBF-SEM - `SJR242`
 - Line profiles - `SJR248`
+- Thapsigargin experiment - `SJR265`
 
 
 ### Notes
