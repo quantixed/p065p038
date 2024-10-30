@@ -27,6 +27,6 @@ Laura Downie, Nuria Ferrandiz, Megan Jones & Stephen J. Royle
 ### Notes
 
 The R code can be executed with data placed into the `Data` folder of the RProject.
-For project folders where data is absent from this repo, it is available seprately at zenodo ([10.5281/zenodo.11396014](https://doi.org/10.5281/zenodo.11396014)), due to GitHub space constraints.
+For project folders where data is absent from this repo, it is available seprately at zenodo ([10.5281/zenodo.14011426](https://doi.org/10.5281/zenodo.14011426)), due to GitHub space constraints.
 
 Fiji scripts for image analysis are included in the `Script` folder of the respective project.
