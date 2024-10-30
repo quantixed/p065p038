@@ -14,12 +14,13 @@ Laura Downie, Nuria Ferrandiz, Megan Jones & Stephen J. Royle
 
 ### Main Figures
 
-- LBR cluster analysis (plasma membrane, 3D) - `SJR233`
-- LBR cluster analysis (plasma membrane, 2D movie) - `SJR217`
-- MAPPER + LBR cluster analysis - `SJR239`
+- LBR cluster analysis (plasma membrane, 3D) - `SJR233` analysis of LD317
+- LBR cluster analysis (plasma membrane, 2D movie) - `SJR217` analysis of LD295
+- MAPPER + LBR cluster analysis - `SJR239` analysis of LD347 (6 repeats)
 - Mitochondria-ER contact analysis from SBF-SEM - `SJR242`
-- Line profiles - `SJR248`
-- Thapsigargin experiment - `SJR265` analysis of 
+- Individual line profiles with image outputs - `SJR248`
+- Line profile comparison - `SJR266` analysis of LD237, LD239, LD352, LD365, LD360
+- Thapsigargin experiment - `SJR265` analysis of LD446
 - Golgi coloc - `SJR267` analysis of LD376
 
 
