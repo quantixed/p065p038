@@ -1,0 +1,2 @@
+ ,Image A,Image B,ROI,Auto Threshold A,Auto Threshold B,Using Stack Histogram,Pearson's Coefficient,Overlap Coefficient,k1,k2,Threshold A,Threshold B,Thresholded Overlap Coefficient,Thresholded k1,Thresholded k2,Area tot,Area A,Area B,Area Overlap,Timepoint
+1,C1-240319_LD376_HCT116_LBRFKBPGFPGiantinFRB_synch45m_c1_009-600box.tif T1,C2-240319_LD376_HCT116_LBRFKBPGFPGiantinFRB_synch45m_c1_009-600box.tif T1,0300-0295,Otsu,Otsu,False,0.6803,0.8979,0.4531,1.7795,451,197,0.9204,0.3238,2.6159,614.3035,35.1503,25.7837,16.7183,1
