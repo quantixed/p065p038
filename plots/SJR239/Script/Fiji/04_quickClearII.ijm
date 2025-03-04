@@ -10,7 +10,7 @@ getDimensions(ww, hh, channels, slices, frames);
 selectWindow(glsby);
 roiManager("Add");
 // hard-coded - sorry
-Table.open("/Users/mlsmaf/Desktop/Log.txt");
+Table.open("/path/to/Log.txt");
 // the log.txt file must have fpath at the beginning, 0-based
 imgPath = Table.getString("fpath", no - 1);
 // the text file comes from whatDoWeHave.ijm so the peaks_clust files are listed
