@@ -30,5 +30,10 @@ Preprint: *bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https
 ### Notes
 
 - The R code can be executed with data placed into the `Data` folder of the RProject.
-- For project folders where data is absent from this repo, it is available seprately at zenodo ([10.5281/zenodo.14011426](https://doi.org/10.5281/zenodo.14011426)), due to GitHub space constraints.
+- For project folders where data is absent from this repo, it is available seprately at zenodo ([10.5281/zenodo.15263507](https://doi.org/10.5281/zenodo.15263507)), due to GitHub space constraints.
 - Fiji scripts for image analysis are included in the `Script` folder of the respective project.
+
+
+### Additional data
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15263507.svg)](https://doi.org/10.5281/zenodo.15263507)
