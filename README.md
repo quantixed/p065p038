@@ -23,6 +23,7 @@ Preprint: *bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https
 - Thapsigargin experiment - `SJR265` analysis of LD446
 - Golgi coloc - `SJR267` analysis of LD376
 - ER expression of FKBP-GFP-tagged constructs under different promoters - `ERExpr`
+- Sec61 and LBR cluster analysis (3D) under different promoters - `Sec61Expr`
 
 
 ### Notes
