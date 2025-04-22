@@ -4,9 +4,9 @@ Code and data for Downie et al. manuscript `#p065p038`
 
 **Non-disruptive inducible labeling of ER-membrane contact sites using the Lamin B Receptor**
 
-Laura Downie, Nuria Ferrandiz, Megan Jones, & Stephen J. Royle
+Laura Downie, Nuria Ferrandiz, Elizabeth Courthold, Megan Jones, & Stephen J. Royle
 
-*bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https://doi.org/10.1101/2024.05.31.596797)
+Preprint: *bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https://doi.org/10.1101/2024.05.31.596797)
 
 --
 
@@ -22,6 +22,7 @@ Laura Downie, Nuria Ferrandiz, Megan Jones, & Stephen J. Royle
 - Line profile comparison - `SJR266` analysis of LD237, LD239, LD352, LD365, LD360
 - Thapsigargin experiment - `SJR265` analysis of LD446
 - Golgi coloc - `SJR267` analysis of LD376
+- ER expression of FKBP-GFP-tagged constructs under different promoters - `ERExpr`
 
 
 ### Notes
