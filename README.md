@@ -24,6 +24,7 @@ Preprint: *bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https
 - Golgi coloc - `SJR267` analysis of LD376
 - ER expression of FKBP-GFP-tagged constructs under different promoters - `ERExpr`
 - Sec61 and LBR cluster analysis (3D) under different promoters - `Sec61Expr`
+- LBR cluster sizes after 2h or 4h (3D) - `LBR_LongTerm`
 
 
 ### Notes
