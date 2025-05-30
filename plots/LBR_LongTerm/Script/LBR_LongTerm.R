@@ -190,3 +190,20 @@ p8 <- ggplot(data = summary_df, aes(x = cond, y = medianArea)) +
 r1 <- (p4 | p8 | p1)
 ggsave("Output/Plots/all_plots_longterm.pdf", r1, width = 176, height = 58, units = "mm")
 
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+# extract Protein and IntDen columns to a new dataframe and save as csv
+S8B <- df_spots %>%
+  select(cond, Surf..unit.) %>% 
+  mutate(area = Surf..unit. / 2) %>%
+  select(cond, area)
+write.csv(S8B, "Output/Data/S8B.csv", row.names = FALSE)
+S8C <- summary_df %>%
+  select(cond, cell, medianArea)
+write.csv(S8C, "Output/Data/S8C.csv", row.names = FALSE)
+S8D <- df_all %>%
+  select(cond, cell, density_in)
+write.csv(S8D, "Output/Data/S8D.csv", row.names = FALSE)

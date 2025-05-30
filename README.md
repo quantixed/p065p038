@@ -41,6 +41,7 @@ Preprint: *bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https
 - For RProject folders where data is absent from the `Data` folder, it is available seprately at zenodo ([10.5281/zenodo.15263507](https://doi.org/10.5281/zenodo.15263507)), due to GitHub space constraints. Download the data, add it to the `Data` folder and the analysis can proceed.
 - Fiji scripts for image analysis are included in the `Script` folder of each RProject.
 - Plots used in the paper can be found in `Output/Plots` or regenerated using the scripts provided.
+- The values plotted in each Figure are exported to `Output/Data`
 
 
 ### Additional data
