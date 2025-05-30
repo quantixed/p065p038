@@ -102,3 +102,15 @@ for (i in 1:nrow(mean_values)) {
 anova_density <- aov(IntDen ~ Protein, data = data)
 summary(anova_density)
 TukeyHSD(anova_density)
+
+## Export results ----
+# extract Protein and IntDen columns to a new dataframe and save as csv
+results <- data %>%
+  select(Protein, IntDen) %>%
+  distinct() %>%
+  arrange(Protein)
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+write.csv(results, "Output/Data/S12D.csv", row.names = FALSE)
