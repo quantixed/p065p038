@@ -57,7 +57,7 @@ calculations_3d <- function(file, cond, iter) {
   par3d(windowRect = c(20, 30, 800, 800))
   
   # take a picture of the xquartz window and save it
-  rgl.snapshot(paste0("Output/Plots/",cond,"_",iter,"_","3dplot.png"), fmt = "png")
+  # rgl.snapshot(paste0("Output/Plots/",cond,"_",iter,"_","3dplot.png"), fmt = "png")
   # volume of alpha shape
   cat(paste0("Volume: ",volume_ashape3d(alphamat),"\n"))
   # surface area of alpha shape
@@ -171,7 +171,7 @@ p2 <- ggplot(df_all, aes(x = cond)) +
   theme(legend.position = "none")
 
 r1 <- p1 | p2
-ggsave("Output/Plots/contacts_density.png", r1, width = 85, height = 50, dpi = 300, units = "mm")
+# ggsave("Output/Plots/contacts_density.png", r1, width = 85, height = 50, dpi = 300, units = "mm")
 
 # ggplot of volume
 p3 <- ggplot(data = df_spots, aes(x = cond, y = Vol..unit., fill = cond)) +
@@ -182,7 +182,7 @@ p3 <- ggplot(data = df_spots, aes(x = cond, y = Vol..unit., fill = cond)) +
   theme_cowplot(8) +
   theme(legend.position = "none") 
 
-ggsave("Output/Plots/contacts_vol.png", p3, width = 3, height = 4, dpi = 300, bg = "white")
+# ggsave("Output/Plots/contacts_vol.png", p3, width = 3, height = 4, dpi = 300, bg = "white")
 
 # ggplot of surface area
 
@@ -195,7 +195,7 @@ p4 <- ggplot(data = df_spots, aes(x = cond, y = Surf..unit./2, fill = cond)) +
   theme_cowplot(8) +
   theme(legend.position = "none") 
 
-ggsave("Output/Plots/contacts_area.png", p4, width = 3, height = 6, dpi = 300, bg = "white")
+# ggsave("Output/Plots/contacts_area.png", p4, width = 3, height = 6, dpi = 300, bg = "white")
 
 # ggplot of volume faceted by file
 p5 <- ggplot(data = df_spots, aes(x = 0, y = Vol..unit., fill = cond)) +
@@ -207,7 +207,7 @@ p5 <- ggplot(data = df_spots, aes(x = 0, y = Vol..unit., fill = cond)) +
   theme_cowplot(8) +
   theme(legend.position = "none") 
 
-ggsave("Output/Plots/contacts_vol_facet.png", p5, width = 8, height = 8, dpi = 300, bg = "white")
+# ggsave("Output/Plots/contacts_vol_facet.png", p5, width = 8, height = 8, dpi = 300, bg = "white")
 
 # ggplot of surface area faceted by file
 p6 <- ggplot(data = df_spots, aes(x = 0, y = Surf..unit./2, fill = cond)) +
@@ -219,7 +219,7 @@ p6 <- ggplot(data = df_spots, aes(x = 0, y = Surf..unit./2, fill = cond)) +
   theme_cowplot(8) +
   theme(legend.position = "none")
 
-ggsave("Output/Plots/contacts_area_facet.png", p6, width = 8, height = 8, dpi = 300, bg = "white")
+# ggsave("Output/Plots/contacts_area_facet.png", p6, width = 8, height = 8, dpi = 300, bg = "white")
 
 # summary data for all files
 summary_df <- df_spots %>%
@@ -260,7 +260,7 @@ p8 <- ggplot(data = summary_df, aes(x = cond, y = medianArea)) +
   theme(legend.position = "none")
 
 r2 <- p7 | p8
-ggsave("Output/Plots/contact_vol_area_per_cell.png", r2, width = 85, height = 50, dpi = 300, units = "mm")
+# ggsave("Output/Plots/contact_vol_area_per_cell.png", r2, width = 85, height = 50, dpi = 300, units = "mm")
 
 # we will use the density measure (not density_in) this is the total number of spots divided by the surface area = p1
 # we will use the median contact area per cell = p8
@@ -311,5 +311,20 @@ inspect_ashape <- function(filelist, number) {
 
 # inspect_ashape(files, 1)
 
-# if a disc is 0.5 um^2 then its diameter is:
-sqrt(0.5/pi)*2
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+# extract data
+F1D <- df_spots %>%
+  select(cond, Surf..unit.) %>% 
+  mutate(area = Surf..unit. / 2) %>%
+  select(cond, area)
+write.csv(F1D, "Output/Data/F1D.csv", row.names = FALSE)
+F1E <- summary_df %>%
+  select(cond, medianArea)
+write.csv(F1E, "Output/Data/F1E.csv", row.names = FALSE)
+F1G <- df_all %>%
+  select(cond, density_in)
+write.csv(F1G, "Output/Data/F1G.csv", row.names = FALSE)
