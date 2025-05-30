@@ -20,6 +20,7 @@ Preprint: *bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https
 - Mitochondria-ER contact analysis from SBF-SEM - `SJR242`
 - Individual line profiles with image outputs - `SJR248`
 - Line profile comparison - `SJR266` analysis of LD237, LD239, LD352, LD365, LD360
+- Flow cytometry - `NF229`
 - Thapsigargin experiment - `SJR265` analysis of LD446
 - Golgi coloc - `SJR267` analysis of LD376
 - ER expression of FKBP-GFP-tagged constructs under different promoters - `ERExpr`
