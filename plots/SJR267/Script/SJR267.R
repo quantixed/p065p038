@@ -82,6 +82,6 @@ if (!dir.exists("Output/Data")) {
   dir.create("Output/Data", recursive = TRUE)
 }
 
-S7B <- df %>%
+F7B <- df %>%
   select(prot, treatment, phase, Pearson.s.Coefficient)
-write.csv(S7B, "Output/Data/S7B.csv", row.names = FALSE)
+write.csv(F7B, "Output/Data/F7B.csv", row.names = FALSE)

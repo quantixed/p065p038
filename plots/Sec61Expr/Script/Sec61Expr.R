@@ -204,11 +204,6 @@ if (!dir.exists("Output/Data")) {
 }
 
 # extract Protein and IntDen columns to a new dataframe and save as csv
-S12D <- df_spots %>%
-  select(cond, Surf..unit.) %>% 
-  mutate(area = Surf..unit. / 2) %>%
-  select(cond, area)
-write.csv(S12D, "Output/Data/S12D.csv", row.names = FALSE)
 S12E <- summary_df %>%
   select(cond, medianArea)
 write.csv(S12E, "Output/Data/S12E.csv", row.names = FALSE)
