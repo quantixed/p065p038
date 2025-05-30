@@ -14,18 +14,22 @@ Preprint: *bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https
 
 ### Main Figures
 
-- LBR cluster analysis (plasma membrane, 3D) - `SJR233` analysis of LD317
-- LBR cluster analysis (plasma membrane, 2D movie) - `SJR217` analysis of LD295
-- MAPPER + LBR cluster analysis - `SJR239` analysis of LD347 (6 repeats)
-- Mitochondria-ER contact analysis from SBF-SEM - `SJR242`
-- Individual line profiles with image outputs - `SJR248`
-- Line profile comparison - `SJR266` analysis of LD237, LD239, LD352, LD365, LD360
-- Flow cytometry - `NF229`
-- Thapsigargin experiment - `SJR265` analysis of LD446
-- Golgi coloc - `SJR267` analysis of LD376
-- ER expression of FKBP-GFP-tagged constructs under different promoters - `ERExpr`
-- Sec61 and LBR cluster analysis (3D) under different promoters - `Sec61Expr`
-- LBR cluster sizes after 2h or 4h (3D) - `LBR_LongTerm`
+- **Fig 1D,E,G** LBR cluster analysis (plasma membrane, 3D) - `SJR233` analysis of LD317
+- **Fig 1I** LBR cluster analysis (plasma membrane, 2D movie) - `SJR217` analysis of LD295
+- **Fig 2B,C** MAPPER + LBR cluster analysis - `SJR239` analysis of LD347 (6 repeats)
+- **Fig 4C,D** Mitochondria-ER contact analysis from SBF-SEM - `SJR242`
+- **Fig 3C** Individual line profiles with image outputs - `SJR248`
+- **Fig 3D, 5** Line profile comparison - `SJR266` analysis of LD237, LD239, LD352, LD365, LD360
+- **Fig 7B** Golgi coloc - `SJR267` analysis of LD376
+
+### Supplementary Figures
+
+- **Fig S2B** Flow cytometry - `NF229`
+- **Fig S5B** Thapsigargin experiment - `SJR265` analysis of LD446
+- **Fig S8B-D** LBR cluster sizes after 2h or 4h (3D) - `LBR_LongTerm`
+- **Fig S9** Individual line profiles with image outputs - `SJR248`
+- **Fig S12D** ER expression of FKBP-GFP-tagged constructs under different promoters - `ERExpr`
+- **Fig S12E,F** Sec61 and LBR cluster analysis (3D) under different promoters - `Sec61Expr`
 
 
 ### Notes
