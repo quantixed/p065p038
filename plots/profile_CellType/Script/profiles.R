@@ -205,3 +205,12 @@ df_selected %>%
 ggsave(paste0("Output/Plots/all_selprofiles.pdf"),
        width = 120, height = 100, units = "mm", dpi = 300)
 
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+
+results <- df_selected %>%
+  select(cellline, organelle, real, ch1, ch2)
+write.csv(results, "Output/Data/S6B.csv", row.names = FALSE)

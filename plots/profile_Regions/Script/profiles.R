@@ -148,5 +148,14 @@ df_all %>%
   facet_grid(cond ~ prot, labeller = my_labels)
 ggsave(paste0("Output/Plots/region_profiles.pdf"), width = 170, height = 60, units = "mm")
 
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
 
-
+results <- df_all %>%
+  mutate(real = real - 19) %>% 
+  select(prot, cond, real, ch1, ch2)
+write.csv(results, "Output/Data/S11.csv", row.names = FALSE)
+ 
