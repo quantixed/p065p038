@@ -139,8 +139,8 @@ process_xml_file <- function(xmlpath, timepath, cell = NULL) {
   
   r1 <- p1 | p2 | p3
   
-  ggsave(paste0("Output/Plots/all_",cell,".pdf"),
-         r1, width = 170, height = 40, units = "mm", bg = "white")
+  # ggsave(paste0("Output/Plots/all_",cell,".pdf"),
+  #        r1, width = 170, height = 40, units = "mm", bg = "white")
   
   # write out summary data
   # check if mean(avgDF$n) is > 5 and if so, write out summary data
@@ -205,6 +205,11 @@ average_waves <- function(df, tcol = "t", valcol = "avg", groupcol = "trace", ts
 # compareDatasets()
 # data <- read.csv("Output/Data/allComparison.csv")
 # print(mean(data$displacement))
+
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
 
 # in Data/ we have 1 xml file per cell and a corresponding deltaT file for timings
 xmlFiles <- list.files(path = "Data/all", pattern = "*.xml", full.names = TRUE)
@@ -279,8 +284,8 @@ p3 <- ggplot(data = spotCountDF_summary, aes(x = t, y = avg)) +
 # now we will make a plot of all the summary plots
 r1 <- p1 | p2 | p3
 
-ggsave(paste0("Output/Plots/all_summary.pdf"),
-       r1, width = 170, height = 40, units = "mm", bg = "white")
+# ggsave(paste0("Output/Plots/all_summary.pdf"),
+#        r1, width = 170, height = 40, units = "mm", bg = "white")
 
 # colour palette using the number of traces we have
 oneColour <- rep("#00a651", length(unique(spotIntensityDF$trace)))
@@ -320,8 +325,8 @@ p7 <- ggplot() +
 # now we will make a plot of all the summary plots
 r2 <- p5 | p6 | p7
 
-ggsave(paste0("Output/Plots/all_traces_summary.pdf"),
-       r2, width = 170, height = 40, units = "mm", bg = "white")
+# ggsave(paste0("Output/Plots/all_traces_summary.pdf"),
+#        r2, width = 170, height = 40, units = "mm", bg = "white")
 
 ## For the figure we will combine specific items from above to save space ----
 xmlPath <- "Data/all/230802_LD312_HCT116LBRFKBPGFP_StargazinmChFRB_dish4001-600box.xml"
@@ -451,3 +456,9 @@ r1 <- p3 | p2 | p1
 ggsave("Output/Plots/figure_plot.pdf",
        r1, width = 170, height = 40, units = "mm", bg = "white")
 
+## Export results ----
+
+F1I <- tmDF %>% 
+  select(trace, t, mean_intensity, area)
+
+write.csv(F1I, "Output/Data/F1I.csv", row.names = FALSE)
