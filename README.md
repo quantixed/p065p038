@@ -26,6 +26,7 @@ Preprint: *bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https
 
 - **Fig S2B** Flow cytometry - `NF229`
 - **Fig S5B** Thapsigargin experiment - `SJR265` analysis of LD446
+- **Fig S6** Line profile comparison (cell lines) - `profile_CellType`
 - **Fig S8B-D** LBR cluster sizes after 2h or 4h (3D) - `LBR_LongTerm`
 - **Fig S9** Individual line profiles with image outputs - `SJR248`
 - **Fig S12D** ER expression of FKBP-GFP-tagged constructs under different promoters - `ERExpr`
