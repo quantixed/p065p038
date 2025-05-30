@@ -103,14 +103,14 @@ ggplot(df_all) +
   labs(y = "Intensity", x = "Length (µm)") +
   lims(y = c(0, 1)) +
   facet_grid(organelle + prot + cond ~ roi, scales = "free")
-ggsave("Output/Plots/profiles.png", width = 10, height = 20, dpi = 300)
+# ggsave("Output/Plots/profiles.png", width = 10, height = 20, dpi = 300)
 
 ggplot(df_all) +
   geom_histogram(aes(x = log2(ch2 / ch1)), fill = "grey", bins = 60) +
   theme_bw(8) +
   labs(x = "Ch1 / Ch2 (Log2)") +
   facet_grid(prot ~ organelle + cond, scales = "free_y")
-ggsave("Output/Plots/histo.png", width = 10, height = 10, dpi = 300)
+# ggsave("Output/Plots/histo.png", width = 10, height = 10, dpi = 300)
 
 # for each organelle, make a plot of ch1 and ch2 vs real
 for (orgnl in unique(df_all$organelle)) {
@@ -123,8 +123,8 @@ for (orgnl in unique(df_all$organelle)) {
     labs(y = "Intensity", x = "Length (µm)") +
     lims(y = c(0, 1)) +
     facet_grid(prot + cond ~ roi, scales = "free")
-  ggsave(paste0("Output/Plots/", orgnl, "_profiles.png"),
-         width = 10, height = 10, dpi = 300)
+  # ggsave(paste0("Output/Plots/", orgnl, "_profiles.png"),
+  #        width = 10, height = 10, dpi = 300)
 }
 
 # Figure ----
@@ -156,3 +156,18 @@ for (orgnl in unique(df_selected$organelle)) {
   ggsave(paste0("Output/Plots/", orgnl, "_selprofiles.pdf"),
          width = 80, height = 80, units = "mm", dpi = 300)
 }
+
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+
+F3C <- df_selected %>%
+  filter(organelle == "Mitochondria") %>%
+  select(organelle, prot, cond, real, ch1, ch2)
+write.csv(F3C, "Output/Data/F3C.csv", row.names = FALSE)
+S9 <- df_selected %>%
+  filter(organelle != "Mitochondria") %>%
+  select(organelle, prot, cond, real, ch1, ch2)
+write.csv(S9, "Output/Data/S9.csv", row.names = FALSE)

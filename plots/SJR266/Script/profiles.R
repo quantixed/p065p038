@@ -107,3 +107,17 @@ t.test(ch2 ~ prot, data = filter(sub_df, organelle == "Endosomes"))
 t.test(ch2 ~ prot, data = filter(sub_df, organelle == "Lysosomes"))
 t.test(ch2 ~ prot, data = filter(sub_df, organelle == "Mitochondria"))
 
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+
+F3D <- fractionAboveThresh %>%
+  filter(organelle == "Mitochondria") %>%
+  select(organelle, prot, ch2)
+write.csv(F3D, "Output/Data/F3D.csv", row.names = FALSE)
+F5B <- fractionAboveThresh %>%
+  filter(organelle != "Mitochondria") %>%
+  select(organelle, prot, ch2)
+write.csv(F5B, "Output/Data/F5B.csv", row.names = FALSE)

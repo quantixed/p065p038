@@ -95,3 +95,13 @@ ggsave("Output/Plots/fractionAboveThresh_all.pdf", width = 2.5, height = 2.5, dp
 
 # t test
 t.test(Norm ~ cond, data = fractionAboveThresh)
+
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+
+S5B <- fractionAboveThresh %>%
+  select(cond, Norm)
+write.csv(S5B, "Output/Data/S5B.csv", row.names = FALSE)

@@ -75,3 +75,13 @@ df_rap <- df %>%
 aov_rap <- aov(Pearson.s.Coefficient ~ prot * phase, data = df_rap)
 tukey_rap <- TukeyHSD(aov_rap)
 tukey_rap
+
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+
+S7B <- df %>%
+  select(prot, treatment, phase, Pearson.s.Coefficient)
+write.csv(S7B, "Output/Data/S7B.csv", row.names = FALSE)

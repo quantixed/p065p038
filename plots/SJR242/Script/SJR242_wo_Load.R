@@ -200,3 +200,21 @@ for(i in unique(cell_summary$cond)){
 mito_summary %>%
   group_by(cond, cell_label) %>%
   summarise(n = n())
+
+## Export results ----
+if(!dir.exists("Output/Data")) {
+  dir.create("Output/Data")
+}
+F4C <- df_mito %>%
+  select(cond, cell_label, total_sa, Surf..unit.) %>%
+  rename(mito_surface_area = Surf..unit.) %>%
+  mutate(total_sa = total_sa / 1e6,
+         mito_surface_area = mito_surface_area / 1e6) %>%
+  arrange(cond, cell_label)
+write.csv(F4C, "Output/Data/F4C.csv", row.names = FALSE)
+
+F4D <- cell_summary %>%
+  select(cond, cell_label, mean_sa) %>%
+  mutate(mean_sa = mean_sa / 1e6) %>%
+  arrange(cond, cell_label)
+write.csv(F4D, "Output/Data/F4D.csv", row.names = FALSE)

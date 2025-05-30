@@ -1,8 +1,9 @@
+# BiocManager::install("EBImage")
 library(EBImage)
 library(abind)
 
 # In profiles.R we selected a df of profiles to plot, called df_selected
-# from dthis we will take each cell and make an rgb matrix for each using
+# from this we will take each cell and make an rgb matrix for each using
 # Intensity values from ch1, ch2, ch3
 # we will then use the rgb matrix to create an image and save it as a .tif file
 # in the Output/Plots directory
@@ -32,7 +33,7 @@ for (i in seq_len(NROW(selected_rois))) {
   rgb_matrix <- matrix(c(df_cell$ch1,
                          df_cell$ch2,
                          df_cell$ch1, # rep(0, nrow(df_cell))),
-                       nrow = nrow(df_cell), ncol = 3)
+                       nrow = nrow(df_cell), ncol = 3))
   # rgb_matrix is a matrix of integers, we need to convert it to a 3D array
   # so that we can use it to create an image
   black_array <- array(black, dim = c(nrow(df_cell), 1, 3))
