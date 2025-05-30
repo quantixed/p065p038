@@ -58,3 +58,16 @@ ggplot(tflow, aes(x = trans, colour = file, fill = file)) +
   annotation_logticks(sides = "b")
 # save the plot
 ggsave("Output/Plots/NF229.pdf", width = 58, height = 58, units = "mm")
+
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+# extract Protein and IntDen columns to a new dataframe and save as csv
+results <- tflow %>%
+  select(file, `B488-530/30-A`, trans) %>%
+  mutate(file = gsub(".fcs", "", file)) %>%
+  mutate(file = gsub("Specimen_001_", "", file))
+
+write.csv(results, "Output/Data/S2B.csv", row.names = FALSE)
