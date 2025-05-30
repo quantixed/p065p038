@@ -196,3 +196,22 @@ TukeyHSD(anova_density)
 anova_area <- aov(medianArea ~ cond, data = summary_df)
 summary(anova_area)
 TukeyHSD(anova_area)
+
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+
+# extract Protein and IntDen columns to a new dataframe and save as csv
+S12D <- df_spots %>%
+  select(cond, Surf..unit.) %>% 
+  mutate(area = Surf..unit. / 2) %>%
+  select(cond, area)
+write.csv(S12D, "Output/Data/S12D.csv", row.names = FALSE)
+S12E <- summary_df %>%
+  select(cond, medianArea)
+write.csv(S12E, "Output/Data/S12E.csv", row.names = FALSE)
+S12F <- df_all %>%
+  select(cond, density_in)
+write.csv(S12F, "Output/Data/S12F.csv", row.names = FALSE)
