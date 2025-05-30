@@ -70,3 +70,12 @@ q1 <- p1 + p2 + theme(legend.position = "right", legend.title = element_blank())
 q1 + plot_layout(guides = "collect")
 ggsave("Output/Plots/coloc.pdf", q1, width = 98, height = 60, units = "mm")
 
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
+
+F2C <- df %>% 
+  select(cell_type,cell_state,obj2,prop2)
+write.csv(F2C, "Output/Data/F2C.csv", row.names = FALSE)

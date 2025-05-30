@@ -88,7 +88,7 @@ p1 <- ggplot(data = df,
   labs(x = "", y = "Total clusters") +
   theme_bw() +
   theme(legend.position = "none")
-ggsave("Output/Plots/comparison.png", p1, width = 200, height = 120, dpi = 300, units = "mm")
+# ggsave("Output/Plots/comparison.png", p1, width = 200, height = 120, dpi = 300, units = "mm")
 
 sp <- df %>% 
   group_by(cell_channel, cond, cell_type, cell_state, rep) %>% 
@@ -122,7 +122,7 @@ p2 <- ggplot(data = df,
   theme_bw(9) +
   theme(legend.position = "none")
 
-ggsave("Output/Plots/comparison2.png", p2, width = 200, height = 120, dpi = 300, units = "mm")
+# ggsave("Output/Plots/comparison2.png", p2, width = 200, height = 120, dpi = 300, units = "mm")
 ggsave("Output/Plots/comparison2.pdf", p2, width = 90, height = 70, units = "mm")
 
 
@@ -175,4 +175,12 @@ tt
 tt <- multi_t_test(data = df[df$cell_channel == "ch2", ], x = x, y = y, val = "obj")
 tt
 
+## Export results ----
+# if Output/Data directory does not exist, create it
+if (!dir.exists("Output/Data")) {
+  dir.create("Output/Data", recursive = TRUE)
+}
 
+F2B <- df %>% 
+  select(cell_channel, cond, cell_type, cell_state, rep, obj)
+write.csv(F2B, "Output/Data/F2B.csv", row.names = FALSE)
