@@ -50,3 +50,7 @@ Preprint: *bioRxiv* 2024. DOI: [https://doi.org/10.1101/2024.05.31.596797](https
 ### Additional data
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15263507.svg)](https://doi.org/10.5281/zenodo.15263507)
+
+### Archived version of the code
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15582238.svg)](https://doi.org/10.5281/zenodo.15582238)
